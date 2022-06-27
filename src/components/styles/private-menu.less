@@ -1,0 +1,66 @@
+﻿@import "../../styles/less/_variables";
+
+.private-menu-wrapper {
+	width: 240px;
+	margin-right: 32px;
+	flex-shrink: 0;
+	@media (max-width: @screen-sm-max) {
+		display: none;
+	}
+}
+.private-menu {
+	&-item {
+		margin-bottom: 4px;
+		&-link {
+			background: #232932;
+			border-radius: 4px;
+			color: #fff;
+			font-weight: 700;
+			padding: 11px 16px;
+			display: block;
+			width: 100%;
+			border: none;
+			text-align: left;
+			cursor: pointer;
+			&:hover, 
+			&:focus {
+				border: none;
+				background: @component-color;
+				color: #2B313A;
+			}
+			&.active {
+				background: @component-color;
+				color: #2B313A;
+			}
+		}
+	}
+}
+
+@media (max-width: @screen-sm-max) {
+	.sidebar-menu-wrapper {
+		.private-menu-wrapper {
+			display: block;
+			width: 226px;
+		}
+		.private-menu-item-link {
+			padding: 8px 16px;
+		}
+		.logo-icon {
+			width: 128px;
+			height: 22px;
+			margin-bottom: 21px;
+		}
+		.profile-link-private {
+			color: #fff;
+			display: flex;
+			margin-bottom: 21px;
+			padding: 12px 16px;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 24px;
+			.icon {
+				margin-right: 8px;
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+﻿@import "../../styles/less/_variables";
+
+.language-dropdown {
+	&-link {
+		width: 48px;
+		height: 48px;
+		display: block;
+		border-radius: 50%;
+		background-color: rgba(151, 153, 157, 0.46);
+
+		&-flag {
+			width: 48px;
+			height: 48px;
+			display: block;
+			border-radius: 50%;
+		}
+	}
+	&:hover {
+		.language-dropdown-link {
+			padding: 4px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+			&:hover,
+			&:focus {
+				border: none;
+			}
+			&-flag {
+				width: 40px;
+				height: 40px;
+			}
+			& > span {
+				background-color: rgba(238, 238, 238, 0.19);
+			}
+		}
+		.dropdown-menu {
+			background-color: rgba(151, 153, 157, 0.46);
+			padding: 4px;
+			border-bottom-right-radius: 50%;
+			border-bottom-left-radius: 50%;
+		}
+	}
+	.dropdown-menu {
+		padding: 0;
+		&-item {
+			cursor: pointer;
+			&:hover > span {
+				background-color: rgba(238, 238, 238, 0.19);
+			}
+		}
+	}
+}

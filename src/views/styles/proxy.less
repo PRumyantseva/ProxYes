@@ -1,0 +1,149 @@
+﻿@import "../../styles/less/_variables";
+
+.private-tariff-selection {
+	border: 2px solid #797C81;
+	border-radius: 9px;
+	margin-bottom: 16px;
+	@media (max-width: @screen-xs) {
+		border: none;
+		margin: 0 -24px;
+		.tariff-tab-list .react-tabs__tab-list {
+			margin-top: 0;
+		}
+	}
+
+	@media (min-width: @screen-sm-min) {
+		.form-item-wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+		.form-item-inner {
+			flex-grow: 1;
+		}
+		.form-item-inner + .form-item-inner {
+			margin-left: 80px;
+		}
+		.form-group {
+			display: flex;
+		}
+		select.form-control {
+			width: 100%;
+		}
+		.react-numeric-input {
+			max-width: none;
+			width: 100%;
+			.form-control {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.proxy-table-header-actions {
+	display: flex;
+	.btn-export {
+		padding: 1px 8px;
+		font-weight: 600;
+		border: none;
+		color: #fff;
+		font-size: 14px;
+		line-height: 21px;
+		cursor: pointer;
+		@media (max-width: @screen-xs) {
+			display: none;
+		}
+	}
+	&-btn {
+		background: #3A3F47;
+		border-radius: 2px;
+		height: 25px;
+		&:hover,
+		&:focus {
+			border: none;
+			background: #3A3F47;
+		}
+	}
+	&-btn + &-btn {
+		margin-left: 12px;
+	}
+}
+
+.table-proxy-value {
+	& > span {
+		display: block;
+		font-size: 12px;
+	}
+}
+.table-proxy-value-country {
+	display: flex;
+	align-items: center;
+	.flag {
+		background-size: 28px;
+		width: 18px;
+		height: 14px;
+		background-position-x: right;
+	}
+}
+.table-proxy-tag {
+	background: #3A3F47;
+	border-radius: 5px;
+	padding: 2px 8px;
+	margin-top: 4px;
+	display: inline-block;
+}
+.table-proxy-comment {
+	.btn-link {
+		font-weight: 600;
+		white-space: nowrap;
+	}
+}
+.table-proxy-buttons {
+	min-width: 75px;
+	display: flex;
+}
+.table-proxy-btn {
+	& + & {
+		margin-left: 16px;
+		@media (max-width: @screen-xs-max) {
+			margin-left: 10px;
+		}
+	}
+	&:hover,
+	&:focus {
+		background: #232932;
+		border-radius: 4px;
+		border: none;
+	}
+	.text {
+		display: none;
+	}
+	@media (max-width: @screen-xs-max) {
+		background: rgba(238, 238, 238, 0.19);
+		border-radius: 3px;
+		padding: 6px 34px;
+		display: flex;
+		align-items: center;
+		.text {
+			display: block;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+			color: #fff;
+			margin-left: 4px;
+		}
+		&:hover,
+		&:focus {
+			background: rgba(238, 238, 238, 0.19);
+			
+		}
+	}
+	@media (max-width: @screen-xs) {
+		flex-grow: 1;
+		justify-content: center;
+		padding: 6px 0;
+		.icon {
+			width: 16px;
+			height: 16px;	
+		}
+	}
+}

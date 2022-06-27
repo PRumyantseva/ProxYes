@@ -1,0 +1,160 @@
+﻿@import '../../../styles/less/_variables';
+
+.header-hamburger,
+.btn-main-buy  {
+	display: none;
+}
+@media (max-width: @screen-sm-max) {
+	.btn-main-buy {
+		display: flex;
+	}
+	.header .container {
+		position: relative;
+	}
+	.header-hamburger {
+		display: block;
+		width: 32px;
+		position: absolute;
+		z-index: 15;
+		height: 32px;
+		top: 16px;
+		right: 0;
+		background: 0 0;
+		border: none;
+		padding: 0;
+		&:focus {
+			outline: 0;
+		}
+		&-toggle {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	.header-hamburger {
+		right: 24px;
+	}
+}
+
+.sidebar-menu-wrapper {
+	top: 0;
+	background: #2B313A;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+	padding: 24px;
+	&.private-sidebar {
+		padding: 16px;
+	}
+}
+.bm-menu-wrap {
+	top: 0;
+}
+
+
+.bm-overlay {
+	left: 0;
+	top: 0;
+	background: rgba(43, 49, 58, 0.5) !important;
+}
+.sidebar-menu-title {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 36px;
+	text-transform: uppercase;
+}
+
+@media (max-width: @screen-sm-max) {
+	.sidebar-menu-wrapper {
+		.header-nav {
+			flex-direction: column;
+			align-items: baseline;
+			.dropdown:hover .header-nav-link {
+				background: none;
+			}
+			&-link {
+				padding: 0;
+				text-transform: uppercase;
+				font-weight: 700;
+				margin-bottom: 4px;
+				margin-top: 20px;
+				.icon {
+					display: none;
+				}
+			}
+			.dropdown-menu {
+				display: block;
+				position: static;
+				padding: 0;
+				background: none;
+				border: none;
+				border-radius: 0;
+				min-width: auto;
+				&-item {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 18px;
+					padding: 4px 0;
+				}
+			}
+		}
+		
+		.nav-item {
+			display: block;
+			margin-bottom: 20px;
+		}
+		.login-buttons-wrap {
+			margin: 0;
+			.btn {
+				padding: 8px 16px;
+				font-size: 14px;
+				line-height: 21px;
+				min-height: 37px;
+			}
+		}
+		.social-list {
+			margin: 21px 0;
+		}
+
+		.language-dropdown.dropdown {
+			display: flex;
+			width: 96px;
+			background: rgba(151, 153, 157, 0.46);
+			border-radius: 46px;
+			margin: 21px 0;
+			.dropdown-menu {
+				display: block;
+				position: relative;
+			}
+			.language-dropdown-link {
+				background: none;
+				& > span {
+					background-color: rgba(238, 238, 238, 0.19);
+					margin: 3px;
+					width: 42px;
+					height: 42px;
+				}
+			}
+			&:hover {
+				.language-dropdown-link {
+					padding: 0;
+					border-radius: 50%;
+					& > span {
+						background-color: transparent;
+					}
+				}
+				.dropdown-menu {
+					background-color: transparent;
+				}
+			}
+		}
+		.copyright {
+			color: #97999D;
+			font-weight: 600;
+			margin-top: 21px;
+			.small-text + .small-text {
+				margin-top: 8px;
+			}
+		}
+	}
+}

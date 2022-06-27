@@ -1,0 +1,92 @@
+﻿@import '../../styles/less/_variables';
+
+.main-tariff-block {
+	width: 515px;
+	height: 655px;
+	background: #2B313A;
+	border-radius: 9px;
+	flex-shrink: 0;
+	margin-left: 72px;
+	@media (max-width: @screen-sm-max) {
+		display: none;
+	}
+}
+
+.tariff-tab-list {
+	border-bottom: 2px solid #797C81;
+	.react-tabs__tab-list {
+		background: #797C81;
+		border-radius: 6px 6px 0 0;
+		border: solid #797C81;
+		margin: 24px 24px -2px;
+		border-width: 2px 2px 0 2px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.react-tabs__tab {
+		font-weight: 700;
+		color: #D3D3D5;
+		border: none;
+		bottom: 0;
+		padding: 12px 0;
+		flex-grow: 1;
+		text-align: center;
+		&--selected {
+			background: #2B313A;
+			border-radius: 4px 4px 0 0;
+		}
+		&:focus:after {
+			content: none;
+		}
+	}
+	
+}
+.react-tabs__tab-panel {
+	padding: 24px;
+}
+
+.tariff-tab-desc {
+	font-weight: 600;
+	color: #B5B7B9;
+	margin-bottom: 24px;
+}
+
+.tariff-select-form {
+	.btn.btn-buy {
+		line-height: 30px;
+		font-size: 20px;
+		width: 100%;
+		min-height: 58px;
+	}
+	&-divider {
+		border-bottom: 1px dashed #B5B7B9;
+		width: 100%;
+		display: block;
+		margin: 24px 0;
+	}
+}
+
+.tariff-select-form-cost-wrap {
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+	.tariff-select-form-cost-label {
+		font-weight: 600;
+		color: #B5B7B9;
+		min-width: 100px;
+		display: block;
+		margin-right: 12px;
+	}
+	.tariff-select-form-cost {
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 38px;
+		color: #B5B7B9;
+		.sum {
+			color: #fff;
+		}
+	}
+}
+//} > div {
+//	width: auto;
+//}

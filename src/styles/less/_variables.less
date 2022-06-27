@@ -1,0 +1,111 @@
+//== Media queries breakpoints
+
+@screen-xss:				 342px;
+
+// Extra small screen / phone
+@screen-xs:                  540px;
+@screen-xs-min:              @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                  828px;
+@screen-sm-min:              @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                  1052px;
+@screen-md-min:              @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                  1260px;
+@screen-lg-min:              @screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+//== Container sizes
+@container-sm:                 810px;
+@container-md:                 1030px;
+@container-lg:                 1230px;
+
+
+//== Colors
+//
+@body-bg: #000;
+@component-color: #FFA113;
+@main-text-color: #ffffff;
+@link-color: #FFB546;
+@link-hover-border-color: @link-color;
+@private-wrapper-color: #2B313A;
+
+
+//== Fonts
+//
+@font-size-hero: 61px;
+@font-size-h1: 49px;
+@font-size-h2: 39px;
+@font-size-h3: 31px;
+@font-size-h4: 25px;
+@font-size-h5: 20px;
+@font-size-h6: 20px;
+@line-height-hero: 92px;
+@line-height-h1: 74px;
+@line-height-h2: 58px;
+@line-height-h3: 46px;
+@line-height-h4: 38px;
+@line-height-h5: 30px;
+@line-height-h6: 30px;
+
+//== Buttons
+//
+@btn-border-radius: 8px;
+@btn-base-height: 48px;
+@btn-base-height-mobile: 37px;
+//@btn-sm-height: 28px;
+//@btn-lg-height: 48px;
+
+@btn-text-color: #2B313A;
+@btn-default-bg: #fff;
+@btn-default-bg-hover: #D3D3D5;
+@btn-default-bg-active: #B5B7B9;
+@btn-default-border-color: #2B313A;
+
+@btn-primary-bg: @component-color;
+@btn-primary-bg-hover: #FFB546;
+@btn-primary-bg-active: #F48400;
+
+@btn-disabled-text-color: #BFBFBF;
+@btn-disabled-bg: #E6E6E6;
+@btn-disabled-border-color: #BFBFBF;
+
+@logo-height: 32px;
+@logo-width: 183px;
+@logo-height-mobile: 21px;
+@logo-width-mobile: 127px;
+
+@header-height: 90px;
+@header-height-mobile: 64px;
+@fullpage-margin-bottom: 32px;
+
+
+//== Forms
+//
+@border-radius: 2px;
+@checkbox-border-color: #D3D3D5;
+@checkbox-focus-border: #97999D;
+@checkbox-disabled-bg: #eee;
+@checkbox-disabled-border: @checkbox-disabled-bg;
+@checkbox-checked-bg: @component-color;
+@checkbox-checked-border: @checkbox-checked-bg;
+@checkbox-checked-focus-bg: #F48400;
+@checkbox-checked-focus-border: @checkbox-checked-focus-bg;
+
+
+@radio-border-color: #D3D3D5;
+@radio-focus-border: #97999D;
+@radio-disabled-bg: #eee;
+@radio-disabled-border: @radio-disabled-bg;
+@radio-checked-bg: @component-color;
+@radio-checked-border: @radio-checked-bg;
+@radio-checked-focus-bg: #F48400;
+@radio-checked-focus-border: @radio-checked-focus-bg;

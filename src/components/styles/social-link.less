@@ -1,0 +1,40 @@
+﻿@import '../../styles/less/_variables';
+
+.social-list {
+	display: flex;
+	margin-top: 43px;
+	margin-bottom: 16px;
+	&-item {
+		margin-right: 16px;
+	}
+	&-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #3A3F47;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		&:hover {
+			background-color: @component-color;
+			border: none;
+		}
+		.social-icon {
+			width: 12px;
+			height: 12px;
+		}
+	}
+}
+
+.social-phone,
+.social-email {
+	a {
+		margin-left: 8px;
+		font-weight: 600;
+	}
+}
+.social-address {
+	margin-top: 16px;
+	max-width: 347px;
+	font-weight: 600;
+}
