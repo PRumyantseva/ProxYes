@@ -39,7 +39,7 @@ module.exports = function () {
 		output: {
 			path: path.resolve(__dirname, './dist'),
 			filename: 'bundle.js',
-			//publicPath: '/'
+			publicPath: '/dist/'
 			//assetModuleFilename: '[name]-[hash:6][ext]'
 		},
 		optimization: optimization(),
@@ -160,25 +160,7 @@ module.exports = function () {
 						filename: "fonts/[name].[ext]",
 					}
 				}
-				
-				
-				// {
-				// 	test: /fonts.*\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-				// 	//type: 'asset/resource'
-				// 	exclude: /node_modules/,
-				// 	use: [
-				// 		{
-				// 			loader: 'file-loader',
-				// 			options: {
-				// 				publicPath: '/fonts',
-				// 				outputPath: './fonts/',
-				// 				name: '[name].[ext]',
-				// 				esModule: false
-				// 			}
-				// 		}
-				// 	],
-				// 	type: 'javascript/auto'
-				// }
+
 			]
 		},
 		resolve: {
