@@ -174,7 +174,7 @@ module.exports = function () {
 			devMiddleware: {
 				publicPath: "https://localhost:3000/dist/",
 			},
-			hot: "only",
+			hot: true,
 			historyApiFallback: true
 		},
 	}
