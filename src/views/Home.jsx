@@ -12,7 +12,7 @@ import './images/colorIcons/money-icon.svg';
 import './images/colorIcons/check-icon.svg';
 import './images/colorIcons/check-all-icon.svg';
 import './images/data1.png';
-//import '../images/planet.png';
+import './images/globe.gif';
 
 
 const Home = () => {
@@ -333,7 +333,10 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-						<div className="coverage-planet">
+						<div className="coverage-globe-wrapper">
+							<div className="coverage-globe-left-bg"></div>
+							<div className="coverage-globe-top-bg"></div>
+							<div className="coverage-globe-image" style={{backgroundImage: "url(" + "../../dist/images/globe.gif" + ")"}}></div>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react';
+import { Form, Field } from 'react-final-form';
 import Icon from '../ui-components/Icon';
 import cn from 'classnames';
 import './images/colorIcons/trash-icon.svg';
@@ -10,6 +11,7 @@ const ProxyTable = () => {
 		{
 			id: 1,
 			selected: false,
+			active: true,
 			date: ['17.05.22 — 20.05.22', '16 дней'],
 			version: ['IPv4 Shared', 'ru', 'Russia'],
 			proxy: ['62.3.13.157:8000', 'SOCKS5'],
@@ -20,6 +22,7 @@ const ProxyTable = () => {
 		{
 			id: 2,
 			selected: false,
+			active: false,
 			date: ['17.05.22 — 20.05.22', '16 дней'],
 			version: ['IPv4 Shared', 'ru', 'Russia'],
 			proxy: ['62.3.13.157:8000', 'SOCKS5'],
@@ -30,6 +33,7 @@ const ProxyTable = () => {
 		{
 			id: 3,
 			selected: false,
+			active: true,
 			date: ['17.05.22 — 20.05.22', '16 дней'],
 			version: ['IPv4 Shared', 'ru', 'Russia'],
 			proxy: ['62.3.13.157:8000', 'SOCKS5'],
@@ -42,6 +46,7 @@ const ProxyTable = () => {
 	const [List, setList] = useState(ProxyDate);
 	const [selectedList, setSelectedList] = useState([]);
 	const [updatedItem, setUpdatedItem] = React.useState(null);
+	const [checkActivity, setCheckActivity] = React.useState(false);
 		
 
 	const onItemCheck = (e, item) => {
@@ -75,14 +80,131 @@ const ProxyTable = () => {
 		const result = List.filter((itemList) => itemList.id !== item.id);
 		setList(result);
 	}
+
+	const onCheckActivity = (item) => {
+		let tempList = List;
+
+		List.map((itemList) => {
+			if (itemList.id === item.id && itemList.active === item.active) {
+				setCheckActivity(true);
+			}
+		});
+		console.log(item)
+	}
+	
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		setAsyncData("something");
+	// 	}, 2000);
+	// });
+
+	const onSubmit = async values => {
+		console.log(JSON.stringify(values))
+	}
 	
 	return (
 		<div className="proxy-table-wrap">
 			<div className="proxy-table-header">
 				<p className="proxy-table-header-title">Все прокси<span className="proxy-count">{List.length}</span></p>
 				<div className="proxy-table-header-actions">
-					<button className="proxy-table-header-actions-btn btn-export">Экспорт</button>
-					<button className="btn-link proxy-table-header-actions-btn"><Icon glyph="sort-icon" /></button>
+					<div className="dropdown">
+						<button className="proxy-table-header-actions-btn btn-export">Экспорт</button>
+						<div className="dropdown-menu dropdown-menu-export">
+							<Form
+								onSubmit={onSubmit}
+								render={({ handleSubmit, form, values }) => (
+									<form onSubmit={handleSubmit} className="export-form vertical-form">
+										<div className="form-group">
+											<label className="control-label">Формат</label>
+											<Field name="format" component="select" className="form-control">
+												<option value="3">3 дня</option>
+												<option value="16">16 дней</option>
+											</Field>
+											<Field name="formatText" component="input" className="form-control" />
+										</div>
+										<div className="form-group">
+											<label className="control-label">Версия</label>
+											<Field name="version" component="select" className="form-control">
+												<option value="all">Все</option>
+												<option value="ru">Russia</option>
+												<option value="us">USA</option>
+											</Field>
+										</div>
+										<div className="form-group">
+											<label className="control-label">Последние Х прокси</label>
+											<Field name="lastProxy" component="input" className="form-control" />
+										</div>
+										<div className="form-group">
+											<label className="control-label">Активность</label>
+											<Field name="activity" component="select" className="form-control">
+												<option value="all">Все</option>
+												<option value="active">Активный</option>
+												<option value="inactive">Неактивный</option>
+											</Field>
+										</div>
+										<button className="btn btn-primary btn-form-export" type="submit">Экспорт в txt</button>
+									</form>
+								)}
+							/>
+						</div>
+					</div>
+					<div className="dropdown">
+						<button className="btn-link proxy-table-header-actions-btn"><Icon glyph="sort-icon" /></button>
+						<ul className="dropdown-menu">
+							<li><a className="dropdown-menu-item">
+									<label className="radio-label">
+										<input
+											type="radio"
+											className="radio-input form-check-input"
+											id="all-check"
+											onChange={(e) => onCheckAllRow(e)}
+										/>
+										<span className="radio-input-icon"></span>
+										По дате добавления
+									</label>
+								</a>
+							</li>
+							<li><a className="dropdown-menu-item">
+									<label className="radio-label">
+										<input
+											type="radio"
+											className="radio-input form-check-input"
+											id="all-check"
+											onChange={(e) => onCheckAllRow(e)}
+										/>
+										<span className="radio-input-icon"></span>
+										По сроку действия
+									</label>
+								</a>
+							</li>
+							<li><a className="dropdown-menu-item">
+									<label className="radio-label">
+										<input
+											type="radio"
+											className="radio-input form-check-input"
+											id="all-check"
+											onChange={(e) => onCheckAllRow(e)}
+										/>
+										<span className="radio-input-icon"></span>
+										По типу прокси
+									</label>
+								</a>
+							</li>
+							<li><a className="dropdown-menu-item">
+									<label className="radio-label">
+										<input
+											type="radio"
+											className="radio-input form-check-input"
+											id="all-check"
+											onChange={(e) => onCheckAllRow(e)}
+										/>
+										<span className="radio-input-icon"></span>
+										По стране
+									</label>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<table className="table">
@@ -169,7 +291,7 @@ const ProxyTable = () => {
 						</td>
 						<td>
 							<div className="table-proxy-buttons">
-								<button className="btn-link table-proxy-btn">
+								<button className={cn('btn-link table-proxy-btn proxy-test-btn', checkActivity && "check")} onClick={() => onCheckActivity(proxy)}>
 									<Icon className="proxy-icon" glyph="lightning-icon" />
 									<span className="text">Тест</span>
 								</button>

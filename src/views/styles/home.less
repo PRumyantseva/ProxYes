@@ -426,12 +426,14 @@
 	background: #000;
 	padding: 32px 0;
 	.coverage-inner {
-		background: linear-gradient(90deg, #2B313A 4.83%, #291D14 100%);
+		background: linear-gradient(90deg, #2B313A 4.83%, #110a00 100%);
 		border-radius: 16px;
 		padding: 40px 0 40px 56px;
 		position: relative;
+		overflow: hidden;
 		@media (max-width: @screen-xs-max) {
 			padding: 24px 16px 0;
+			background: linear-gradient(180deg, #2B313A 0%, #110a00 100%);
 		}
 	}
 
@@ -447,12 +449,19 @@
 	}
 	.coverage-desc {
 		max-width: 488px;
+		@media (max-width: @screen-sm-max) {
+			max-width: none;
+			position: relative;
+			z-index: 2;
+		}
 	}
 	.coverage-country-block {
 		margin-top: 40px;
 		width: 680px;
 		@media (max-width: @screen-xs-max) {
 			width: auto;
+			position: relative;
+			z-index: 3;
 		}
 	}
 	.coverage-country-inner {
@@ -500,35 +509,97 @@
 			}
 		}
 	}
-	.coverage-planet {
-		//background: url("../images/planet.png") no-repeat;
+	.coverage-globe-wrapper {
 		position: absolute;
 		width: 472px;
 		height: 449px;
 		top: 0;
 		right: 0;
 		@media (max-width: @screen-md-max) {
-			width: 322px;
 			height: 441px;
+			width: 270px;
 		}
 		@media (max-width: @screen-sm-max) {
-			bottom: 0;
 			top: auto;
-			border-bottom-right-radius: 16px;
+			bottom: 0;
+			height: 655px;
+			width: 350px;
 		}
 		@media (max-width: @screen-xs-max) {
-			//background-image: url("../images/planet-mobile.png");
 			position: relative;
-			background-size: cover;
 			width: auto;
-		}
-		@media (max-width: @screen-xs) {
-			background-size: auto;
-			height: 100%;
-			min-height: 215px;
-			background-position: bottom center;
+			height: 130px;
 			margin: 0 -16px;
-			border-radius: 0 0 16px 16px;
+		}
+		.coverage-globe-left-bg {
+			position: absolute;
+			top: 0;
+			width: 105px;
+			height: 449px;
+			background: linear-gradient(90deg, #1c1a18 0%, #110a00 100%);
+			z-index: 1;
+			@media (max-width: @screen-md-max) {
+				width: 35px;
+				height: 441px;
+				background: linear-gradient(90deg, #181511 0%, #110a00 100%);
+			}
+			@media (max-width: @screen-sm-max) {
+				height: 655px;
+				background: linear-gradient(90deg, #1d1c1b 0%, #110a00 100%);
+			}
+			@media (max-width: @screen-xs-max) {
+				display: none;
+			}
+		}
+		.coverage-globe-top-bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: #110a00;
+			height: 100px;
+			width: 367px;
+			@media (max-width: @screen-md-max) {
+				height: 140px;
+				width: 270px;
+			}
+			@media (max-width: @screen-sm-max) {
+				height: 320px;
+				width: 350px;
+			}
+			@media (max-width: @screen-xs-max) {
+				height: 50px;
+				width: 100%;
+				left: auto;
+				right: auto;
+				top: -130px;
+				background: linear-gradient(180deg, #1a1815 0%, #110a00 100%);
+			}
+		}
+		.coverage-globe-image {
+			position: relative;
+			top: 60px;
+			left: 70px;
+			background-color: @component-color;
+			background-blend-mode: luminosity;
+			background-size: 550px;
+			width: 518px;
+			height: 518px;
+			@media (max-width: @screen-md-max) {
+				background-size: 430px;
+				top: 140px;
+				left: 8px;
+			}
+			@media (max-width: @screen-sm-max) {
+				top: 320px;
+			}
+			@media (max-width: @screen-xs-max) {
+				top: -80px;
+				width: auto;
+				left: auto;
+				right: auto;
+				background-size: cover;
+				background-position-x: center;
+			}
 		}
 	}
 }

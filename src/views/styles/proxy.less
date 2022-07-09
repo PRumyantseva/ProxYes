@@ -63,8 +63,46 @@
 			background: #3A3F47;
 		}
 	}
-	&-btn + &-btn {
+	.dropdown + .dropdown {
 		margin-left: 12px;
+	}
+	
+	.dropdown-menu {
+		background: #232932;
+		border-radius: 8px;
+		margin-top: -20px;
+		right: 0;
+		left: auto;
+		padding: 12px 12px 0;
+		&-item {
+			white-space: nowrap;
+			margin-bottom: 10px;
+			display: block;
+			border: none;
+			.radio-label {
+				cursor: pointer;
+			}
+		}
+		&-export {
+			padding-top: 6px;
+			padding-bottom: 8px;
+			width: 220px;
+			.form-control {
+				width: 100%;
+				padding: 5px 12px;
+			}
+			.control-label {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 18px;
+			}
+			.btn-form-export {
+				width: 100%;
+				padding: 10px 24px;
+				min-height: 44px;
+				margin-top: 3px;
+			}
+		}
 	}
 }
 
@@ -146,4 +184,40 @@
 			height: 16px;	
 		}
 	}
+}
+
+
+.icon-spin {
+	animation: icon-spin 2s infinite linear;
+}
+@-webkit-keyframes icon-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
+@keyframes icon-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
+
+
+.proxy-test-btn { 
+	&.check {
+		svg {
+			display: none;
+		}
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 19.0001L9.29289 18.293L8.58579 19.0001L9.29289 19.7072L10 19.0001ZM13.2929 14.293L9.29289 18.293L10.7071 19.7072L14.7071 15.7072L13.2929 14.293ZM9.29289 19.7072L13.2929 23.7072L14.7071 22.293L10.7071 18.293L9.29289 19.7072Z' fill='%23797C81'/%3E%3Cpath d='M5.93782 15.5001C5.16735 14.1656 4.85875 12.6142 5.05989 11.0864C5.26102 9.55868 5.96064 8.13998 7.05025 7.05037C8.13986 5.96077 9.55856 5.26114 11.0863 5.06001C12.6141 4.85888 14.1655 5.16747 15.5 5.93794C16.8345 6.70841 17.8775 7.8977 18.4672 9.32134C19.0568 10.745 19.1603 12.3234 18.7615 13.8119C18.3627 15.3003 17.4838 16.6155 16.2613 17.5536C15.0388 18.4917 13.5409 19.0001 12 19.0001' stroke='%23797C81' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+		background-color: transparent;
+		width: 24px;
+		height: 24px;
+		&:extend(.icon-spin all);
+	}
+	
 }
