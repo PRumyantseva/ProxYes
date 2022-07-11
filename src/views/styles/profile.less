@@ -1,0 +1,64 @@
+﻿@import "../../styles/less/_variables";
+
+.profile-form {
+	margin-top: 16px;
+	@media (max-width: @screen-xs) {
+		margin-top: 12px;
+	}
+	.form-group {
+		width: 288px;
+		@media (max-width: @screen-xs) {
+			width: 100%;
+		}
+	}
+	.form-control {
+		width: 100%;
+	}
+	.form-field-group {
+		.form-group {
+			display: inline-block;
+			margin-right: 16px;
+		}
+		@media (max-width: @screen-xs-max) {
+			display: flex;
+			flex-direction: column;
+			.form-group {
+				margin-right: 0;
+			}
+			.form-group:nth-child(2) {
+				order: 1;
+			}
+		}
+	}
+	.subscription-block {
+		margin-bottom: 16px;
+		@media (max-width: @screen-xs-max) {
+			margin-bottom: 12px;
+		}
+		.checkbox-label {
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+	.authorization-check-block {
+		margin: 24px 0;
+		@media (max-width: @screen-xs) {
+			margin: 12px 0;
+		}
+	}
+	.help-text {
+		font-size: 14px;
+		line-height: 21px;
+		margin-top: 4px;
+	}
+	
+	&-subtitle {
+		margin-bottom: 4px;
+	}
+	@media (max-width: @screen-xs) {
+		.btn {
+			width: 100%;
+			min-height: 44px;
+		}
+	}
+}

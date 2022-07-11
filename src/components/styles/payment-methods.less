@@ -1,0 +1,34 @@
+﻿@import '../../styles/less/_variables';
+
+.balance-payment-method-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+
+	.payment-method-item {
+		border: 3px solid #797C81;
+		border-radius: 6px;
+		background: #fff;
+		width: 144px;
+		height: 118px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 12px;
+		@media (min-width: @screen-lg-min) {
+			&:not(:nth-child(6)) {
+				margin-right: 12px;
+			}
+		}
+		@media (max-width: @screen-md-max) {
+			margin-right: 12px;
+		}
+		@media (max-width: @screen-xs) {
+			margin-right: 8px;
+			margin-bottom: 8px;
+		}
+		@media (max-width: @screen-xss) {
+			width: 100%;
+			margin-bottom: 12px;
+		}
+	}
+}

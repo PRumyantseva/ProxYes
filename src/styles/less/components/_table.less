@@ -1,28 +1,6 @@
-﻿.proxy-table-wrap {
-	.proxy-table-header {
-		display: flex;
-		justify-content: space-between;
-		&-title {
-			font-weight: 700;
-			font-size: 25px;
-			line-height: 38px;
-			margin-bottom: 12px;
-			@media (max-width: @screen-xs) {
-				font-size: 16px;
-				line-height: 24px;
-			}
-			.proxy-count {
-				color: #B5B7B9;
-				margin-left: 4px;
-			}
-		}
-	}
-}
-
-.table {
+﻿.table {
 	width: 100%;
 	thead {
-		border-bottom: 1px solid #595D64;
 		@media (max-width: @screen-xs-max) {
 			display: none;
 		}
@@ -71,5 +49,16 @@
 			padding: 0 0 4px;
 		}
 	}
+	&-tag-item {
+		background: #3A3F47;
+		border-radius: 5px;
+		font-size: 14px;
+		line-height: 21px;
+		padding: 2px 8px;
+		display: inline-block;
+	} 
 }
 
+.payment-table-wrap .table tbody td {
+	padding-bottom: 12px;
+}

@@ -38,8 +38,26 @@
 		}
 	}
 }
-
-.proxy-table-header-actions {
+.proxy-table-wrap {
+	.private-header {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: @screen-xs-max) {
+			border: none;
+			margin-bottom: 0;
+		}
+		&-title {
+			.proxy-count {
+				color: #B5B7B9;
+				margin-left: 4px;
+			}
+		}
+	}
+	.table-tag-item {
+		margin-top: 4px;
+	}
+}
+.proxy-private-header-actions {
 	display: flex;
 	.btn-export {
 		padding: 1px 8px;
@@ -122,13 +140,7 @@
 		background-position-x: right;
 	}
 }
-.table-proxy-tag {
-	background: #3A3F47;
-	border-radius: 5px;
-	padding: 2px 8px;
-	margin-top: 4px;
-	display: inline-block;
-}
+
 .table-proxy-comment {
 	.btn-link {
 		font-weight: 600;

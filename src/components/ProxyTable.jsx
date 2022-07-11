@@ -103,12 +103,12 @@ const ProxyTable = () => {
 	}
 	
 	return (
-		<div className="proxy-table-wrap">
-			<div className="proxy-table-header">
-				<p className="proxy-table-header-title">Все прокси<span className="proxy-count">{List.length}</span></p>
-				<div className="proxy-table-header-actions">
+		<div className="table-wrap proxy-table-wrap">
+			<div className="private-header">
+				<p className="private-header-title">Все прокси<span className="proxy-count">{List.length}</span></p>
+				<div className="proxy-private-header-actions">
 					<div className="dropdown">
-						<button className="proxy-table-header-actions-btn btn-export">Экспорт</button>
+						<button className="proxy-private-header-actions-btn btn-export">Экспорт</button>
 						<div className="dropdown-menu dropdown-menu-export">
 							<Form
 								onSubmit={onSubmit}
@@ -149,14 +149,13 @@ const ProxyTable = () => {
 						</div>
 					</div>
 					<div className="dropdown">
-						<button className="btn-link proxy-table-header-actions-btn"><Icon glyph="sort-icon" /></button>
+						<button className="btn-link proxy-private-header-actions-btn"><Icon glyph="sort-icon" /></button>
 						<ul className="dropdown-menu">
 							<li><a className="dropdown-menu-item">
 									<label className="radio-label">
 										<input
 											type="radio"
 											className="radio-input form-check-input"
-											id="all-check"
 											onChange={(e) => onCheckAllRow(e)}
 										/>
 										<span className="radio-input-icon"></span>
@@ -169,7 +168,6 @@ const ProxyTable = () => {
 										<input
 											type="radio"
 											className="radio-input form-check-input"
-											id="all-check"
 											onChange={(e) => onCheckAllRow(e)}
 										/>
 										<span className="radio-input-icon"></span>
@@ -182,7 +180,6 @@ const ProxyTable = () => {
 										<input
 											type="radio"
 											className="radio-input form-check-input"
-											id="all-check"
 											onChange={(e) => onCheckAllRow(e)}
 										/>
 										<span className="radio-input-icon"></span>
@@ -195,7 +192,6 @@ const ProxyTable = () => {
 										<input
 											type="radio"
 											className="radio-input form-check-input"
-											id="all-check"
 											onChange={(e) => onCheckAllRow(e)}
 										/>
 										<span className="radio-input-icon"></span>
@@ -216,7 +212,6 @@ const ProxyTable = () => {
 									type="checkbox"
 									className="checkbox-input form-check-input"
 									checked={isCheckedAllRow}
-									id="all-check"
 									onChange={(e) => onCheckAllRow(e)}
 								/>
 								<span className="checkbox-input-icon"></span>
@@ -265,7 +260,7 @@ const ProxyTable = () => {
 							<div className="table-mobile-label">Прокси</div>
 							<div className="table-proxy-value">
 								<p>{proxy.proxy[0]}</p>
-								<p className='table-proxy-tag'>{proxy.proxy[1]}</p>
+								<p className="table-tag-item">{proxy.proxy[1]}</p>
 							</div>
 						</td>
 						<td className="table-cell-login">

@@ -1,0 +1,53 @@
+﻿@import "../../styles/less/_variables";
+
+.table-type-value {
+	& > span {
+		display: block;
+		font-size: 12px;
+		color: #97999D;
+	}
+}
+.table-country-value {
+	display: flex;
+	align-items: center;
+	.flag {
+		background-size: 28px;
+		width: 18px;
+		height: 14px;
+		background-position-x: right;
+	}
+}
+
+.table-order-buttons {
+	display: flex;
+	justify-content: end;
+	@media (max-width: @screen-xs-max) {
+		justify-content: normal;
+	}
+}
+.table-order-btn {
+	background: #50555c;
+	border-radius: 3px;
+	color: #fff;
+	padding: 6px 8px;
+	min-height: 36px;
+	&.no-paid {
+		background: #EE4E4E;
+	}
+	& + & {
+		margin-left: 16px;
+		@media (max-width: @screen-xs-max) {
+			margin-left: 10px;
+		}
+	}
+	@media (max-width: @screen-xs) {
+		flex-grow: 1;
+		justify-content: center;
+		padding: 6px 0;
+		.icon {
+			width: 16px;
+			height: 16px;	
+		}
+	}
+}
+

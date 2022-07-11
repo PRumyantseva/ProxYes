@@ -29,7 +29,7 @@ const Header = (props) => {
 					<div className="header-nav-wrap">
 						{ isCurrentUser ?
 							<>
-								<Link className="header-nav-link header-nav-link-private" to="/proxy"><Icon className="user-icon" glyph="user-icon" />Профиль</Link>
+								<Link className="header-nav-link header-nav-link-private" to="/profile"><Icon className="user-icon" glyph="user-icon" />Профиль</Link>
 							</>
 						:
 							<>
