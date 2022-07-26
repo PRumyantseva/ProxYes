@@ -2,6 +2,7 @@
 import {PrivateMenu} from '../components/PrivateMenu';
 import './styles/balance.less';
 import {PaymentMethods} from '../components/PaymentMethods';
+import {ExchangeRates} from '../components/ExchangeRates';
 
 const Balance = () => {
 	const [error, setError] = useState(null);
@@ -54,29 +55,7 @@ const Balance = () => {
 						<PaymentMethods />
 
 						<h6 className="balance-subtitle">Курс валют</h6>
-						<div className="exchange-rates-block">
-							<div className="exchange-rates-item">
-								<span className="currency">1 USD</span>
-								<span className="divider">=</span>
-								<span>61.61 ₽</span>
-							</div>
-							<div className="exchange-rates-item">
-								<span className="currency">1 BTC</span>
-								<span className="divider">=</span>
-								<span>1996495 ₽</span>
-							</div>
-							<div className="exchange-rates-item">
-								<span className="currency">1 LTC</span>
-								<span className="divider">=</span>
-								<span>4331.22 ₽</span>
-							</div>
-							<div className="exchange-rates-item">
-								<span className="currency">1 DOGE</span>
-								<span className="divider">=</span>
-								<span>5.49 ₽</span>
-							</div>
-							
-						</div>
+						<ExchangeRates />
 						
 					</div>
 				</div>

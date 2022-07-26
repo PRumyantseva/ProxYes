@@ -1,0 +1,159 @@
+﻿@import "../../styles/less/_variables";
+
+@media (min-width: @screen-sm-min) {
+	.payment-modal {
+		width: 728px;
+	}	
+}
+
+.payment-data-wrapper {
+	padding: 4px 24px 24px;
+	
+	.exchange-rates-block {
+		display: flex;
+		font-size: 14px;
+		line-height: 21px;
+		margin-bottom: 16px;
+		.exchange-rates-inner + .exchange-rates-inner {
+			margin-left: 24px;
+		}
+		@media (max-width: @screen-xs) {
+			flex-direction: column;
+			.exchange-rates-inner + .exchange-rates-inner {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.balance-payment-method-wrapper .payment-method-item {
+		width: 158px;
+		height: 118px;
+		margin-bottom: 16px;
+		@media (min-width: @screen-lg-min) {
+			margin-right: 16px;
+			&:not(:nth-child(6)) {
+				margin-right: 16px;
+			}
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+	.btn-pay {
+		display: block;
+		width: 312px;
+		margin: auto;
+		font-size: 14px;
+		line-height: 21px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		min-height: 41px;
+		@media (max-width: @screen-xs) {
+			width: 100%;
+		}
+	}
+}
+
+.payment-data-title {
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+.payment-data-item {
+	display: flex;
+	font-size: 14px;
+	line-height: 21px;
+	margin-bottom: 4px;
+	@media (max-width: @screen-xs) {
+		flex-direction: column;
+	}
+	&-label {
+		color: #B5B7B9;
+		font-weight: 600;
+		width: 150px;
+		flex-shrink: 0;
+		@media (max-width: @screen-xs) {
+			margin-bottom: 4px;
+			width: auto;
+		}
+	}
+	&-value {
+		font-weight: 700;
+	}
+	.radio-label {
+		display: block;
+		margin-bottom: 4px;
+	}
+	.help-text {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+.payment-discount-block {
+	align-items: center;
+	@media (max-width: @screen-xs) {
+		align-items: baseline;
+	}
+	.payment-discount-value {
+		width: 312px;
+		height: 36px;
+		@media (max-width: @screen-xs-max) {
+			width: 100%;
+		}
+	}
+}
+
+.payment-data-divider {
+	border-bottom: 1px dashed #B5B7B9;
+	margin: 16px 0;
+}
+
+.payment-data-method-title {
+	font-weight: 700;
+	margin: 16px 0;
+}
+
+
+/* Модалка об успешной оплате */
+.payment-success-wrapper {
+	padding: 0 24px 16px;
+	.payment-success-icon {
+		background: url("../images/done-icon-large.svg") no-repeat;
+		width: 64px;
+		height: 64px;
+		margin: 0 auto 8px
+	}
+	.payment-success-title {
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 8px;
+	}
+	.payment-success-desc {
+		margin-bottom: 16px;
+		font-size: 12px;
+		line-height: 18px;
+		text-align: center;
+	}
+	.payment-success-actions {
+		display: flex;
+		.btn {
+			width: 100%;
+			font-size: 12px;
+			line-height: 14px;
+			min-height: 38px;
+			text-align: center;
+		}
+		.btn-default {
+			background: rgba(238, 238, 238, 0.19);
+			color: #fff;
+		}
+		@media (max-width: @screen-xs-max) {
+			flex-direction: column;
+			.btn + .btn {
+				margin-left: 0;
+				margin-top: 8px;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+﻿@import "../../styles/less/_variables";
+
+.exit-modal-wrapper {
+	width: 360px;
+	padding-top: 16px;
+	@media (max-width: @screen-xs) {
+		width: auto;
+	}
+}
+
+.exit-modal {
+	padding: 0 24px 16px;
+	&-text {
+		font-weight: 700;
+		margin-bottom: 16px;
+	}
+	&-action {
+		display: flex;
+		.btn {
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 18px;
+			padding-bottom: 6px;
+			padding-top: 6px;
+			min-height: 30px;
+			border-radius: 3px;
+			width: 100%;
+			&-default {
+				background: rgba(238, 238, 238, 0.19);
+				color: #fff;
+			}
+		}
+	}
+}

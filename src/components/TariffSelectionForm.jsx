@@ -4,6 +4,7 @@ import NumericInput from 'react-numeric-input';
 import Icon from '../ui-components/Icon';
 import './styles/tariff-select.less';
 import '../images/icons/arrow-right-light-icon.svg';
+import {PaymentModal} from './PaymentModal';
 
 const TariffSelectionForm = () => {
 	const onSubmit = async values => {
@@ -68,7 +69,9 @@ const TariffSelectionForm = () => {
 						<div className="tariff-select-form-cost"><span className="sum">155</span> $</div>
 					</div>
 					
-					<button className="btn btn-primary btn-buy btn-with-icon" type="submit">Купить сейчас <Icon glyph="arrow-right-light-icon" className="icon-right" /></button>
+					{/*<button className="btn btn-primary btn-buy btn-with-icon" type="submit">Купить сейчас <Icon glyph="arrow-right-light-icon" className="icon-right" /></button>*/}
+					
+					<PaymentModal />
 				</form>
 			)}
 		/>

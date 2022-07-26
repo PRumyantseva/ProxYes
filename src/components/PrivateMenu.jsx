@@ -1,13 +1,9 @@
 ﻿import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import {useAuth} from '../hook/useAuth';
 import './styles/private-menu.less';
+import {ExitModal} from '../views/ExitModal';
 
 const PrivateMenu = () => {
-	const {signOut} = useAuth();
-	const navigate = useNavigate();
-	
 	return (
 		<div className="private-menu-wrapper">
 			<ul className="private-menu">
@@ -33,7 +29,7 @@ const PrivateMenu = () => {
 					<NavLink className="private-menu-item-link" to="/api">Api</NavLink>
 				</li>
 				<li className="private-menu-item">
-					<button className="private-menu-item-link" onClick={() => signOut(() => navigate('/', {replace: true}))}>Выход</button>
+					<ExitModal />
 				</li>
 			</ul>
 		</div>

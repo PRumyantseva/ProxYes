@@ -1,0 +1,58 @@
+﻿@import "../../styles/less/_variables";
+
+.api-item-wrapper {
+	margin-top: 16px;
+	
+	.form-control-wrap {
+		width: 450px;
+		margin-right: 16px;
+		@media (max-width: @screen-xs-max) {
+			width: 100%;
+		}
+	}
+	.form-control {
+		width: 100%;
+	}
+	.control-label {
+		margin-right: 0;
+		margin-bottom: 8px;
+	}
+	.api-item-inner {
+		display: flex;
+		align-items: baseline;
+		@media (max-width: @screen-xs) {
+			flex-direction: column;
+			.btn {
+				margin-top: 8px;
+				width: 100%;
+			}
+		}
+	}
+	.form-help-text {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 21px;
+		margin-top: 8px;
+		&.danger-text {
+			color: #EE4E4E;
+		}
+	}
+}
+
+.btn-api-documentation {
+	margin-top: 26px;
+	background: #353A43;
+	border-radius: 6px;
+	padding: 12px 16px;
+	color: @component-color;
+	font-weight: 600;
+	min-width: 611px;
+	justify-content: left;
+	@media (max-width: @screen-xs-max) {
+		width: 100%;
+		min-width: auto;
+	}
+	@media (max-width: @screen-xs) {
+		margin-top: 16px;
+	}
+}
